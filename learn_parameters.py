@@ -1,4 +1,4 @@
-# This script uses bnlearn to fit parameters to a previously learned or defined
+# This script uses bnlearn to fit parameters to a previously learned or defined Bayesian network structure
 
 # Author: Iris Meredith
 
