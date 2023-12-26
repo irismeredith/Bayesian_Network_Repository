@@ -27,6 +27,9 @@ print(brisbane_trip_data_reduced.columns)
 
 # Revert conversion to date for zone range column
 
+# This should ideally be in a loop, or better, a vectorised function. It's like this mostly because I was mucking around trying
+# to figure out how to transform the data, then never refactored.
+
 brisbane_trip_data_reduced['Zone Range'] = brisbane_trip_data_reduced['Zone Range'].str.replace('Jan', '1')
 
 brisbane_trip_data_reduced['Zone Range'] = brisbane_trip_data_reduced['Zone Range'].str.replace('Feb', '2')
@@ -69,16 +72,6 @@ brisbane_trip_data_reduced['Alighting Time'] = pd.to_datetime(brisbane_trip_data
 brisbane_trip_data_reduced['Month'] = pd.DatetimeIndex(brisbane_trip_data_reduced['Operations Date']).month
 
 brisbane_trip_data_reduced['Weekday'] = pd.DatetimeIndex(brisbane_trip_data_reduced['Operations Date']).weekday
-
-# OK, so change day_slice out to hour on and hour off
-
-# Or do it every five minutes for peak times only? Both decent options
-
-# We need to de-excel the form as well
-
-# I'll try both and run the system with both
-
-# Plot histogram of travel by month and day of the week
 
 # Group times by day slice
 
